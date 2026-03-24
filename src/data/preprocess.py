@@ -2,6 +2,7 @@ import re
 from nltk.corpus import stopwords
 from nltk.stem import WordNetLemmatizer
 import pandas as pd
+import nltk
 
 nltk.download("stopwords")
 # nécessaire pour que le lemmatizer puisse fonctionner
@@ -15,8 +16,8 @@ def clean_text(text):
         [word for word in text.split() if word not in stopwords.words("english")]
     )
     # on ramène le texte à sa forme de base avec le lemmatizer
-    lemmatizer = WordNetLemmatizer
-    text = " ".join([lemmatizer.lematise(word) for word in text.split()])
+    lemmatizer = WordNetLemmatizer()
+    text = " ".join([lemmatizer.lemmatize(word) for word in text.split()])
     return text
 
 
