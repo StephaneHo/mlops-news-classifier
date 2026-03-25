@@ -1,7 +1,7 @@
 import logging
 from pathlib import Path
 
-from scripts.base import DataSource
+from src.data_sources.base import DataSource
 
 
 logger = logging.getLogger(__name__)
