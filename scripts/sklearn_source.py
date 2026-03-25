@@ -3,7 +3,7 @@ import logging
 import pandas as pd
 from sklearn.datasets import fetch_20newsgroups
 
-from src.data_sources.base import DataSource
+from scripts.base import DataSource
 
 logger = logging.getLogger(__name__)
 
