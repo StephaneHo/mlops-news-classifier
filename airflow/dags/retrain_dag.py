@@ -9,5 +9,7 @@ preprocess data: nettoie et vectorise
 train model: entraine et loggue dans ML Flow
 evaluate model: compare avec le modèle en production
 promote model: promeut si meilleur
-notify: envoie un résumé )
+notify: envoie un résumé
 """
+
+from __future__ import annotations
