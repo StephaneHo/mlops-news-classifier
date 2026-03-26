@@ -15,18 +15,14 @@ Exemple :
     alt.atheism/
     comp.graphics/
     ...
+# 1. Télécharger
+python scripts/download_kaggle_data.py
 
-download_data.py
-        ↓
-choisit une source
-        ↓
-data_sources/*.py
-        ↓
-load_data()
-        ↓
-données brutes
-        ↓
-convert.py
+# 2. Convertir en CSV
+python scripts/build_csv.py
+
+# 3. Prétraiter
+python scripts/preprocess_data.py
         ↓
 données propres
 
