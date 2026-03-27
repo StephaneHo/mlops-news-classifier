@@ -1,0 +1,2 @@
+# Windows PowerShell
+Get-ChildItem -Recurse -Filter "*.py" | Select-Object FullName
