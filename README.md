@@ -23,9 +23,19 @@ python scripts/build_csv.py
 
 # 3. Prétraiter
 python scripts/preprocess_data.py
-        ↓
-données propres
 
+# 4 Split data
+        ↓
+# 5. Entrainement du modèle
+Utilisation d'Autolog : mlflow.sklearn.autolog() capture automatiquement les paramètres du TF-IDF, de la Logistic Regression.
+Signature du modèle : L'ajout de la signature permet à MLflow de connaître le format attendu des données (colonnes, types), facilitant le déploiement en API.
+Gestion des erreurs (Try/Except) : Le bloc with mlflow.start_run() est sécurisé pour garantir que la session se ferme proprement même en cas de crash.
+Modularité : Extraction des hyperparamètres dans un dictionnaire pour plus de lisibilité.
+
+# 6 Visualisation
+Lancer l'interface dans un 2ème terminal
+mlflow ui
+Ouvrir **http://localhost:5000** 
 
 scripts/
     download_data.py
