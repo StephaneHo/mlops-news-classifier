@@ -16,6 +16,11 @@ logger = logging.getLogger(__name__)
 
 
 def clean_text(text):
+
+    # si certaines cellules de text sont vides => NaN => pandas les lit comme float
+    if not isinstance(text, str):
+        return ""
+
     text = text.lower()
     text = re.sub(r"[^a-zA-Z\s]", "", text)
 
@@ -35,6 +40,8 @@ def preprocess_dataset(input_path, output_path):
         raise
     df["text"] = df["text"].apply(clean_text)
 
+    # On supprime les lignes vides avec text vide après nettoyage
+    df = df[df["text"].str.strip() != ""]
     output_path.parent.mkdir(parents=True, exist_ok=True)
     df.to_csv(output_path, index=False)
     print(f"Datset prétraité sauvegardé dans {output_path}")

@@ -17,6 +17,6 @@ print("Racine ajoutée :", root)  # ← doit afficher mlops-news-classifier
 print("src existe ?", (root / "src").exists())  #
 
 preprocess_dataset(
-    input_path=Path("data/raw/20newsgroup.csv"),
-    output_path=Path("data/processed/20newsgroup_clean.csv"),
+    input_path=Path("data/processed/all_raw.csv"),
+    output_path=Path("data/processed/all_clean.csv"),
 )

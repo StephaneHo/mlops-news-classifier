@@ -19,18 +19,21 @@ Exemple :
 python scripts/download_kaggle_data.py
 
 # 2. Convertir en CSV
-python scripts/build_csv.py
+python scripts/build_csv.py (et on en profite pour supprimer les headers sinon overfit dans le modèle)
 
 # 3. Prétraiter
 python scripts/preprocess_data.py
 
 # 4 Split data
+python scripts/split_data.py  
         ↓
 # 5. Entrainement du modèle
 Utilisation d'Autolog : mlflow.sklearn.autolog() capture automatiquement les paramètres du TF-IDF, de la Logistic Regression.
 Signature du modèle : L'ajout de la signature permet à MLflow de connaître le format attendu des données (colonnes, types), facilitant le déploiement en API.
 Gestion des erreurs (Try/Except) : Le bloc with mlflow.start_run() est sécurisé pour garantir que la session se ferme proprement même en cas de crash.
 Modularité : Extraction des hyperparamètres dans un dictionnaire pour plus de lisibilité.
+
+python scripts/train_model.py 
 
 # 6 Visualisation
 Lancer l'interface dans un 2ème terminal
@@ -66,5 +69,3 @@ src/
 # lancer le projet
 uv run uvicorn src.api.main:app --reload
 
-# training
-uv run python src/model/train.py

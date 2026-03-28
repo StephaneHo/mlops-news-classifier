@@ -2,7 +2,7 @@ from sklearn.model_selection import train_test_split
 import pandas as pd
 
 # On charge
-df = pd.read_csv("data/processed/20newsgroup_clean.csv").dropna()
+df = pd.read_csv("data/processed/all_clean.csv").dropna()
 
 # On splite
 train_df, test_df = train_test_split(
